@@ -2,7 +2,7 @@ import Data.Char
 
 pairs :: Int -> [a] -> [(a, a)]
 pairs offset xs = zip xs xsRotated
-    where xsRotated = (drop offset xs) ++ xs
+    where xsRotated = drop offset (cycle xs)
 
 pairValue :: (Int, Int) -> Int
 pairValue (a, b)
