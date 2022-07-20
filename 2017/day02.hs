@@ -23,13 +23,13 @@ evenDivisionValue (a:b:_)
         smaller = min a b
 
 differenceValuator :: [Int] -> Int
-differenceValuator line = maximum(line) - minimum(line)
+differenceValuator line = (maximum line) - (minimum line)
 
 divisibilityValuator :: [Int] -> Int
 divisibilityValuator = firstValue . (map evenDivisionValue) . (combinations 2)
 
 checksum :: ([Int] -> Int) -> [[Int]] -> Int
-checksum lineValuator spreadsheet = sum(map lineValuator spreadsheet)
+checksum lineValuator spreadsheet = sum (map lineValuator spreadsheet)
 
 main :: IO ()
 main = do
